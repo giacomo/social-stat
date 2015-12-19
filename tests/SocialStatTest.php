@@ -46,4 +46,19 @@ class SocialStatTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals($expected, $stats->getFacebookStats());
     }
+
+    public function testGetTwitterStats()
+    {
+        $this->markTestSkipped('Implementation not completed');
+
+        $stats = new SocialStat();
+
+        $expected = array(
+            "id"     => "some-page-id",
+            "follower" => 20,
+            "following" => 10
+        );
+
+        $this->assertEquals($expected, $stats->getTwitterStats());
+    }
 }
