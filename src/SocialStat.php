@@ -59,7 +59,7 @@ class SocialStat
 
         $trimmedResult = [];
         foreach ($showOnlyFields as $field) {
-            if (in_array($field, $jsonAsArray = json_decode($result, true))) {
+            if (array_key_exists($field, $jsonAsArray = json_decode($result, true))) {
                 $trimmedResult[$field] =  $jsonAsArray[$field];
             }
         }

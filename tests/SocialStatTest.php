@@ -49,14 +49,26 @@ class SocialStatTest extends \PHPUnit_Framework_TestCase
 
     public function testGetTwitterStats()
     {
-        $this->markTestSkipped('Implementation not completed');
+        $json = '{"screen_name":"screen-name","followers_count":20,"friends_count":10}';
 
-        $stats = new SocialStat();
+        $twitterMock = $this->getMock('\TwitterAPIExchange', array('buildOauth', 'performRequest'), array(), '', false);
+        $twitterMock->expects($this->once())
+                    ->method('buildOauth')
+                    ->willReturnSelf();
+        $twitterMock->expects($this->once())
+                    ->method('performRequest')
+                    ->willReturn($json);
+
+        /** @var SocialStat|\PHPUnit_Framework_MockObject_MockObject $stats */
+        $stats = $this->getMock('Giacomo\SocialStat\SocialStat', array('getTwitter'));
+        $stats->expects($this->once())
+              ->method('getTwitter')
+              ->willReturn($twitterMock);
 
         $expected = array(
-            "id"     => "some-page-id",
-            "follower" => 20,
-            "following" => 10
+            "screen_name"     => "screen-name",
+            "followers_count" => 20,
+            "friends_count" => 10
         );
 
         $this->assertEquals($expected, $stats->getTwitterStats());
