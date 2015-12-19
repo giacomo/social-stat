@@ -16,6 +16,8 @@ $dotenv->load();
 $stats = new SocialStat();
 
 /**
+ * FacebookStats
+ *
  * array {
  *     "id"     => "some-page-id",
  *     "link"   => "https://www.facebook.com/some-page-url/",
@@ -23,4 +25,7 @@ $stats = new SocialStat();
  *     "talking_about_count" => 10,
  * }
  */
-var_dump($stats->getFacebookStats());
+//var_dump($stats->getFacebookStats());
+
+
+var_dump($stats->getTwitterStats());
