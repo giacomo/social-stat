@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e2cf84555f11391df0d5bb811bd85343",
-    "content-hash": "0d8bef2cf0d9b547f320b27f04924b50",
+    "hash": "508499064413f385785b8882791213fe",
+    "content-hash": "9ec56ec186693836742e37d13e298148",
     "packages": [
         {
             "name": "dirkgroenen/pinterest-api-php",
@@ -219,16 +219,16 @@
         },
         {
             "name": "mgp25/instagram-php",
-            "version": "v1.0.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mgp25/Instagram-API.git",
-                "reference": "bf7619651bb4803edb2a34a7c6df3530433c86a5"
+                "reference": "62703a5c9637dd098cf5fd452dcec137e62a61aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mgp25/Instagram-API/zipball/bf7619651bb4803edb2a34a7c6df3530433c86a5",
-                "reference": "bf7619651bb4803edb2a34a7c6df3530433c86a5",
+                "url": "https://api.github.com/repos/mgp25/Instagram-API/zipball/62703a5c9637dd098cf5fd452dcec137e62a61aa",
+                "reference": "62703a5c9637dd098cf5fd452dcec137e62a61aa",
                 "shasum": ""
             },
             "require": {
@@ -252,7 +252,7 @@
                 "php",
                 "private api"
             ],
-            "time": "2015-11-26 00:43:36"
+            "time": "2015-12-14 01:20:33"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -1457,7 +1457,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "mgp25/instagram-php": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

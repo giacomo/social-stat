@@ -4,7 +4,7 @@
   "require": {
     "facebook/php-sdk-v4": "^5.1",
     "j7mbo/twitter-api-php": "^1.0",
-    "mgp25/instagram-php": "^1.0",
+    "mgp25/instagram-php": "dev-master",
     "dirkgroenen/pinterest-api-php": "^0.2.0",
     "vlucas/phpdotenv": "^2.1"
   },

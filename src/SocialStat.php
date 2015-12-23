@@ -77,4 +77,31 @@ class SocialStat
         ]);
     }
 
+    public function getTrimmedInstagramResponse(array $response)
+    {
+        return [
+            'following_count' => $response['user']['following_count'],
+            'follower_count'  => $response['user']['follower_count']
+        ];
+    }
+
+    /**
+     * @return \Instagram
+     */
+    protected function getInstagram()
+    {
+        return new \Instagram(
+            getenv('INSTA_USERNAME'),
+            getenv('INSTA_PASSWORD')
+        );
+    }
+
+    public function getInstagramStats()
+    {
+        $instagram = $this->getInstagram();
+        $instagram->login();
+
+        return $this->getTrimmedInstagramResponse($instagram->getSelfUsernameInfo());
+    }
+
 }
