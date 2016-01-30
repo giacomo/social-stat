@@ -7,7 +7,6 @@
 
 namespace Giacomo\SocialStat;
 
-
 use Facebook\Facebook;
 
 class SocialStat
@@ -103,5 +102,4 @@ class SocialStat
 
         return $this->getTrimmedInstagramResponse($instagram->getSelfUsernameInfo());
     }
-
 }

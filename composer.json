@@ -1,6 +1,6 @@
 {
   "name": "giacomo/social-stat",
-  "description": "Package used to ...",
+  "description": "Get social stats from Facebook, Twitter and Instagram",
   "require": {
     "facebook/php-sdk-v4": "^5.1",
     "j7mbo/twitter-api-php": "^1.0",
