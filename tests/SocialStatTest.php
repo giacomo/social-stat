@@ -73,4 +73,34 @@ class SocialStatTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals($expected, $stats->getTwitterStats());
     }
+
+    public function testGetInstagramStats()
+    {
+        $response = array(
+            'user' => array(
+                'following_count' => 121,
+                'follower_count'  => 67
+            )
+        );
+
+        $instagramMock = $this->getMock('\Instagram', array('login', 'getSelfUsernameInfo'), array(), '', false);
+        $instagramMock->expects($this->once())
+                      ->method('login');
+        $instagramMock->expects($this->once())
+                      ->method('getSelfUsernameInfo')
+                      ->willReturn($response);
+
+        /** @var SocialStat|\PHPUnit_Framework_MockObject_MockObject $stats */
+        $stats = $this->getMock('Giacomo\SocialStat\SocialStat', array('getInstagram'));
+        $stats->expects($this->once())
+              ->method('getInstagram')
+              ->willReturn($instagramMock);
+
+        $expected = array(
+            'following_count' => 121,
+            'follower_count'  => 67
+        );
+
+        $this->assertEquals($expected, $stats->getInstagramStats());
+    }
 }
