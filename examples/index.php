@@ -5,9 +5,8 @@
  * @copyright   2015
  */
 
-use Giacomo\SocialStat\SocialStat;
-
 require '../vendor/autoload.php';
+use Giacomo\SocialStat\SocialStat;
 
 $dotenv = new Dotenv\Dotenv(realpath(__DIR__ . '/../'));
 $dotenv->load();
@@ -46,4 +45,4 @@ $stats = new SocialStat();
  *      "follower_count"] => 67,
  * )
  */
-var_dump($stats->getInstagramStats());
+//var_dump($stats->getInstagramStats());
